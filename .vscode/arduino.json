@@ -1,5 +1,0 @@
-{
-    "programmer": "AVR ISP",
-    "board": "arduino:avr:uno",
-    "port":"COM4"
-}
