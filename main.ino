@@ -1,6 +1,6 @@
 #include "DHT.h" //Importando biblioteca do sensor DHT11.
 
-#define DHTPIN A1 //Definindo o pino para dados do DHT11.
+#define DHTPIN 5 //Definindo o pino para dados do DHT11.
 #define DHTTYPE DHT11 //Definindo que o modelo do sensor DHT sera o 11.
 
 #define MaxTempBee 32 //Definindo valor maximo de temperatura para as abelhas.
