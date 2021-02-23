@@ -3,6 +3,10 @@
 #define DHTPIN 5 //Definindo o pino para dados do DHT11.
 #define DHTTYPE DHT11 //Definindo que o modelo do sensor DHT sera o 11.
 
+#define In4 4 //Definindo o pino ligado a entrada da PonteH.
+
+#define In5 5//Definindo o pino ligado a entrada da PonteH.
+
 #define MaxTempBee 32 //Definindo valor maximo de temperatura para as abelhas.
 #define MinTempBee 25 //Definindo o valor minimo de temperatura para as abelhas.
 
@@ -12,6 +16,10 @@
 DHT dht(DHTPIN, DHTTYPE); //Atribuindo os parametros para a função referente ao DHT.
 
 void setup() {
+
+    pinMode(In4, OUTPUT);
+    pinMode(In5, OUTPUT);
+
 
     Serial.begin(9600); //Inicia o monitor serial do arduino com um baud rate de 9600 bits por segundo para o DHT11.
 
@@ -30,6 +38,10 @@ void loop() {
         Serial.println("Erro na leitura do Sensor DHT11");
 
     } else { //Caso não ocorrer erros na leitura dos dados 
+
+        //Liga a resistencia
+        digitalWrite(In4, HIGH);
+        digitalWrite(In5, LOW);
 
         Serial.print("Temperatura: ");
         Serial.print(t);  //Apresentando dados da temperatura no Monitor serial.
